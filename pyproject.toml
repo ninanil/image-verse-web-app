@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "image-verse-web-app"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+transformers = "4.40.0"
+diffusers = "0.27.2"
+ftfy = "6.2.0"
+accelerate = "^1.1.0"
+datasets = "^3.1.0"
+bitsandbytes = "^0.44.1"
+einops = "^0.8.0"
+ninja = "^1.11.1.1"
+nest-asyncio = "^1.6.0"
+pyngrok = "^7.2.1"
+uvicorn = "^0.32.0"
+pydantic-settings = "^2.6.1"
+flash-attention = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
