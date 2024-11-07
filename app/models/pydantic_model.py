@@ -61,6 +61,7 @@ class Transformation(BaseModel):
 
 class ImageRequest(BaseModel):
     prompt: str
+    format: Optional[str] = None
     transformations: Optional[List[Transformation]] = None
 
     @validator('prompt')

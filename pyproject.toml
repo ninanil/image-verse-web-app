@@ -7,6 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+numpy = "<2.0"
+huggingface_hub = "0.25.1"
 transformers = "4.40.0"
 diffusers = "0.27.2"
 ftfy = "6.2.0"
@@ -19,7 +21,8 @@ nest-asyncio = "^1.6.0"
 pyngrok = "^7.2.1"
 uvicorn = "^0.32.0"
 pydantic-settings = "^2.6.1"
-flash-attention = "^1.0.0"
+fastapi = "^0.115.4"
+python-multipart = "^0.0.17"
 
 
 [build-system]

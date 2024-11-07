@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from app.utils.app_logger import logger
-from app.config.upload_image_file_config import UploadImageFileConfig
+from app.config.image_config import UploadImageFileConfig
 from app.utils.image_file_validation import ImageFileValidation
-from app.routes import routes  
+from app.api import routes  
 import nest_asyncio
 from pyngrok import ngrok
 import uvicorn
@@ -14,6 +14,8 @@ app = FastAPI(title=config.app_name)
 
 # Initialize logger
 
+# Set the ngrok authtoken
+ngrok.set_auth_token(config.ngrok_auth_token)
 
 # Include the router
 app.include_router(routes.router)

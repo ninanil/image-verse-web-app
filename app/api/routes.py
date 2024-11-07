@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, UploadFile, File, status
 from fastapi.responses import JSONResponse
-from app.pydantic_models import ImageRequest  
+from app.models.pydantic_model import ImageRequest  
 from app.services.ml import StableDiffusionModel  
 from app.services.ml import ImageCaptioningPipeline  
 from app.utils.bounding_box_drawer import BoundingBoxDrawer  
@@ -11,6 +11,7 @@ from app.config.stable_diffusion_config import StableDiffusionConfig
 from app.config.image_captioning_config import ImageCaptioningConfig
 from app.config.image_config import UploadImageFileConfig
 from app.config.image_config import ImageFileValidation
+import io
 
 # Initialize configurations
 upload_image_file_config = UploadImageFileConfig()
