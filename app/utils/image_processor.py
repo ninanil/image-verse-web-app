@@ -3,6 +3,7 @@ import torchvision.transforms as transforms
 import torch
 import io
 import base64
+from app.utils.app_logger import logger
 
 class ImageProcessor:
     

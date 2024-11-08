@@ -29,7 +29,7 @@ async def generate_image(request : ImageRequest):
     # Load and Generate Image from Prompt
     try:
         device = "cuda" if torch.cuda.is_available() else "cpu"
-        stable_diffusion_model = StableDiffusionModel()
+        stable_diffusion_model = StableDiffusionModel(stable_diffusion_config)
         with torch.cuda.amp.autocast() if device == "cuda" else torch.no_grad():
             image = stable_diffusion_model.generate_image(request.prompt)
         logger.info("Image generated successfully from prompt")
@@ -39,6 +39,7 @@ async def generate_image(request : ImageRequest):
 
     # Apply Transformations
     try:
+        transformationList = request.transformations
         image = ImageProcessor.apply_transformations(image, transformationList)
         width, height = image.size
         logger.info(f"Final image size after transformations: {width}x{height}")
@@ -49,7 +50,7 @@ async def generate_image(request : ImageRequest):
     # Convert Image to Base64 for Transmission
     try:
         image_format = request.format.upper()
-        base64_image = ImageProcessor.convert_to_base64(image, request.image_format)
+        base64_image = ImageProcessor.convert_to_base64(image, image_format)
         logger.info("Image processing complete")
     except Exception as e:
         logger.error(f"Error encoding image to Base64: {str(e)}")
