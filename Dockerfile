@@ -1,5 +1,15 @@
-# Use an official Python 3.10 image as a base
-FROM python:3.10-slim
+# Use NVIDIA's CUDA image with Python 3.10 and Ubuntu 20.04
+FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu20.04
+
+# Install Python and system dependencies
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    curl && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set up Python 3.10 as the default Python
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
 
 # Set environment variables for Poetry and Python
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -18,6 +28,8 @@ WORKDIR /image-verse-web-app
 
 # Copy the current directory contents into the container at /image-verse-web-app
 COPY . /image-verse-web-app
+#
+RUN poetry lock
 
 # Install dependencies and the app itself using Poetry
 RUN poetry config virtualenvs.create false && poetry install

@@ -28,9 +28,9 @@ pydantic-settings = "^2.6.1"
 fastapi = "^0.115.4"
 python-multipart = "^0.0.17"
 torch = "^2.5.1"
+torchvision = "^0.20.1"
 
-[tool.poetry.scripts]
-myapp = "app.main:app"
+
 
 
 [build-system]
