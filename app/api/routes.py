@@ -11,7 +11,7 @@ from app.config.stable_diffusion_config import StableDiffusionConfig
 from app.config.image_captioning_config import ImageCaptioningConfig
 from app.config.image_config import UploadImageFileConfig
 from app.config.image_config import ImageFileValidation
-import io
+import io, torch
 
 # Initialize configurations
 upload_image_file_config = UploadImageFileConfig()
