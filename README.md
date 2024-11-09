@@ -148,14 +148,6 @@ image-verse-web-app/
 
 ---
 
-## Image Storage
-
-Generated images are saved in the `static/images` folder with timestamped filenames. Ensure this directory exists:
-```bash
-mkdir -p static/images
-```
-
----
 
 ## Contact
 
