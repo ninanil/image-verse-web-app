@@ -172,8 +172,4 @@ image-verse-web-app/
 ---
 
 
-## Contact
 
-For any issues or inquiries, please contact:
-- **Name**: Naveen V
-- **Email**: naveenv3112000@gmail.com
