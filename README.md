@@ -76,31 +76,38 @@
 ### 1. **Generate Image**
 - **Endpoint**: `/generate`
 - **Method**: `POST`
+- Parameters:
+
+prompt (required, str): Text prompt based on which the image is generated.
+transformations (optional, dict): Allows users to specify a series of transformations to apply to the generated image. Available transformations:
+rotate: Rotate the image by a given angle.
+flip: Flip the image horizontally or vertically.
+resize: Resize the image to specified dimensions.
+grayscale: Convert the image to grayscale.
+brightness: Adjust the brightness of the image.
 - **Request Body**:
   ```json
-  {
-    "prompt": "A fantasy landscape with castles and dragons",
-    "negative_prompt": "low quality, blurry",
-    "num_outputs": 3,
-    "num_inference_steps": 50,
-    "guidance_scale": 7.5
+   {
+  "prompt": "A sunset over the mountains",
+  "transformations": {
+    "rotate": 45,
+    "flip": "horizontal",
+    "resize": { "width": 800, "height": 600 },
+    "grayscale": true
   }
   ```
-- **Response**: List of URLs pointing to the generated images.
+- **Response**:
+ ```json
+ 
+
+  ```
 
 ### 2. **Fine-Tune Model**
 - **Endpoint**: `/caption`
 - **Method**: `POST`
 - **Request Body**:
-  ```json
-  {
-    "fine_tune_model_name": "your-model-name",
-    "training_data": "path-to-your-training-data",
-    "num_epochs": 10,
-    "prompt": "Fine-tuned prompt"
-  }
-  ```
-- **Response**: URL of the fine-tuned model or image.
+ Upload an image file directly via form-data.
+- **Response**: 
 
 ---
 
