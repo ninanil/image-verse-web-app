@@ -36,7 +36,7 @@
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/ninanil/image-verse-web-app.git
-   cd fastapi-image-generation
+   cd image-verse-web-app
    ```
 
 2. **Create and activate a virtual environment**:
@@ -107,20 +107,43 @@
 ## Directory Structure
 
 ```plaintext
-.
+image-verse-web-app/
+├── __init__.py                        # Optional, marks the root as a package
 ├── app/
+│   ├── __init__.py                    # Marks 'app' as a package
 │   ├── api/
-│   │   ├── models.py        # Request/Response models
-│   │   └── routes.py        # API route definitions
+│   │   ├── __init__.py
+│   │   └── routes.py                  # Defines API endpoints (e.g., /generate, /caption)
+│   ├── config/                        # Configuration files for different modules
+│   │   ├── __init__.py
+│   │   ├── app_config.py              # General app configurations
+│   │   ├── image_captioning_config.py # Configuration specific to the captioning model
+│   │   ├── image_config.py            # Configuration for image transformations
+│   │   └── stable_diffusion_config.py # Configuration for the Stable Diffusion model
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── pydantic_model.py          # Pydantic models for request and response validation
 │   ├── services/
-│   │   └── replicate_service.py  # Logic for interacting with Replicate API
-│   ├── utils/
-│   │   └── image_utils.py    # Utility for saving images
-│   ├── config.py             # Configuration settings (e.g., API tokens)
-│   └── main.py               # FastAPI app initialization
-├── .env                      # Environment variables
-├── README.md                 # This file
-└── requirements.txt          # Python dependencies
+│   │   ├── __init__.py
+│   │   └── image_service.py           # Service functions for image generation and captioning
+│   ├── utils/                         # Utility functions for the app
+│   │   ├── __init__.py
+│   │   ├── app_logger.py              # Logger configuration for application events
+│   │   ├── bounding_box_drawer.py     # Draws bounding boxes on images for captioning
+│   │   ├── image_file_validation.py   # Utility for validating image files
+│   │   └── image_processor.py         # Handles image transformations and processing
+├── tests/
+│   ├── __init__.py                    # Marks the tests directory as a package
+│   ├── test_generate.py               # Tests for the /generate endpoint
+│   └── test_caption.py                # Tests for the /caption endpoint
+├── Dockerfile                         # Docker configuration for containerizing the application
+├── README.md                          # Project documentation
+├── .env                               # Environment variables (e.g., NGROK_AUTH_TOKEN)
+├── requirements.txt                   # Python dependencies (for non-Poetry setups)
+├── poetry.lock                        # Locked dependencies for Poetry
+├── pyproject.toml                     # Poetry configuration for dependencies
+└── main.py                            # Main entry point for the FastAPI application
+
 ```
 
 ---
