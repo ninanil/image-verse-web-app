@@ -78,13 +78,14 @@
 - **Method**: `POST`
 - **Parameters**:
 
-prompt (required, str): Text prompt based on which the image is generated.
-transformations (optional, dict): Allows users to specify a series of transformations to apply to the generated image. Available transformations:
-rotate: Rotate the image by a given angle.
-flip: Flip the image horizontally or vertically.
-resize: Resize the image to specified dimensions.
-grayscale: Convert the image to grayscale.
-brightness: Adjust the brightness of the image.
+- **`prompt`** *(required, str)*: Text prompt based on which the image is generated.
+- **`transformations`** *(optional, dict)*: Allows users to specify a series of transformations to apply to the generated image. Available transformations:
+  - **rotate**: Rotate the image by a specified angle.
+  - **flip**: Flip the image horizontally or vertically.
+  - **resize**: Resize the image to specified dimensions.
+  - **grayscale**: Convert the image to grayscale.
+  - **brightness**: Adjust the brightness of the image.
+
 - **Request Body**:
   ```json
   {
