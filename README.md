@@ -12,7 +12,6 @@
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
 - [Directory Structure](#directory-structure)
-- [Contact](#contact)
 
 ## Features
 - **Image Generation**: Generates high-quality, realistic images from text prompts using the Stable Diffusion model, CompVis/stable-diffusion-v1-4 
