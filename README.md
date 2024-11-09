@@ -60,14 +60,16 @@
 
 ## Running the Application
 
-1. **Start the FastAPI server**:
-   ```bash
-   uvicorn app.main:app --reload
-   ```
+### Start the FastAPI Server with ngrok
 
-2. **Access the API documentation**:
-   - Open your browser and navigate to `http://127.0.0.1:8000/docs` for the interactive Swagger UI.
+To start the server and create a public URL with ngrok, run the following command in your terminal:
 
+```bash
+python main.py
+
+
+**Access the API documentation**:
+   - After running the command, the application will display a public ngrok URL in the logs.
 ---
 
 ## API Endpoints
