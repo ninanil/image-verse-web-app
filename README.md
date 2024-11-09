@@ -76,7 +76,7 @@
 ### 1. **Generate Image**
 - **Endpoint**: `/generate`
 - **Method**: `POST`
-- Parameters:
+- **Parameters**:
 
 prompt (required, str): Text prompt based on which the image is generated.
 transformations (optional, dict): Allows users to specify a series of transformations to apply to the generated image. Available transformations:
@@ -87,18 +87,26 @@ grayscale: Convert the image to grayscale.
 brightness: Adjust the brightness of the image.
 - **Request Body**:
   ```json
-   {
+  {
   "prompt": "A sunset over the mountains",
-  "transformations": {
-    "rotate": 45,
-    "flip": "horizontal",
-    "resize": { "width": 800, "height": 600 },
-    "grayscale": true
-  }
+  "transformations": [
+    {"name": "resize", "params": {"width": 256, "height": 256}},
+    {"name": "rotate", "params": {"angle": 45}},
+    {"name": "brightness", "params": {"factor": 1.5}},
+    {"name": "flip", "params": {"horizontal": true}},
+    {"name": "grayscale"}
+  ],
+  "format": "JPEG"
+}
+
   ```
 - **Response**:
  ```json
- 
+ {
+  "status": "success",
+  "image_data": "<base64_encoded_image>",
+  "image_format": "JPEG"
+}
 
   ```
 
@@ -108,7 +116,14 @@ brightness: Adjust the brightness of the image.
 - **Request Body**:
  Upload an image file directly via form-data.
 - **Response**: 
+```json
+ 
+{
+  "caption": "A beautiful fashion girl on a rocky terrain",
+  "image_data": "<base64_encoded_image_with_bounding_boxes>"
+}
 
+  ```
 ---
 
 ## Directory Structure
