@@ -47,9 +47,15 @@
    ```
 
 3. **Install dependencies**: You can install dependencies with either `pip` or `poetry`:
-   Using pip:
+   Using `pip`:
    ```bash
-   pip install -r requirements.txt
+  pip install -r requirements.txt
+   ```
+
+Using `poetry` (if Poetry is installed):
+
+```bash
+poetry install
    ```
 
 5. **Set up environment variables**:
