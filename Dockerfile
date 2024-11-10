@@ -1,5 +1,5 @@
 # Use NVIDIA's CUDA image with Python 3.10 and Ubuntu 20.04
-FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu20.04
+FROM nvidia/cuda:12.3.0-devel-ubuntu20.04
 
 # Install Python and system dependencies
 RUN apt-get update && apt-get install -y \
