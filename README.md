@@ -127,7 +127,7 @@ docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 image-verse-web-app
   - **brightness**: Adjust the brightness of the image.
 
 - **Request Body**:
-  ```json
+```json
   {
   "prompt": "A sunset over the mountains",
   "transformations": [
@@ -142,7 +142,7 @@ docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 image-verse-web-app
 ```
 
 - **Response**:
- ```json
+```json
  {
   "status": "success",
   "image_data": "<base64_encoded_image>",
