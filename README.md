@@ -81,14 +81,14 @@ Open your browser and navigate to this URL (e.g., http://<ngrok-public-url>/docs
 Navigate to your project directory in the terminal and build the Docker image with the following command:
 
 ```
-  docker build -t image-verse-web-app .
+docker build -t image-verse-web-app .
  ```
 
  2- **Run the Docker Container**
 Run the Docker container with your ngrok authentication token as an environment variable:
 
 ```
-    docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 image-verse-web-app 
+docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 image-verse-web-app 
 ```
 
 3- **Access the API Documentation**
