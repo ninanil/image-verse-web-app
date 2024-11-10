@@ -66,8 +66,8 @@
 To start the server and create a public URL with ngrok, run the following command in your terminal:
 
 ```
-python main.py 
-     ```
+python main.py
+```
 
 2- **Access the API documentation**:
 
@@ -82,8 +82,8 @@ Navigate to your project directory in the terminal and build the Docker image wi
 
 ```
   docker build -t image-verse-web-app .
- 
-     ```
+ ```
+
  2- **Run the Docker Container**
 Run the Docker container with your ngrok authentication token as an environment variable:
 
