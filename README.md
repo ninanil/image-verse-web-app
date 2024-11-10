@@ -32,6 +32,8 @@
 
 ## Installation
 
+### Non-Docker Setup
+
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/ninanil/image-verse-web-app.git
@@ -44,24 +46,27 @@
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-3. **Install dependencies**:
+3. **Install dependencies**: You can install dependencies with either `pip` or `poetry`:
+   Using pip:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Set up environment variables**:
+5. **Set up environment variables**:
    - Create a `.env` file in the project root directory and add your Replicate API token:
      ```bash
      touch .env
      echo "NGROK_AUTH_TOKEN=your_ngrok_auth_token" > .env
      ```
+### Docker Setup
+Docker: Ensure Docker is installed on your system. 
 
 ---
 
 ## Running the Application
 
 ### Non-Docker Setup
-1- **Start the FastAPI Server with ngrok**
+1. **Start the FastAPI Server with ngrok**
 
 To start the server and create a public URL with ngrok, run the following command in your terminal:
 
@@ -69,14 +74,14 @@ To start the server and create a public URL with ngrok, run the following comman
 python main.py
 ```
 
-2- **Access the API documentation**:
+2. **Access the API documentation**:
 
 After running the command, the application will display a public ngrok URL in the logs.
-Open your browser and navigate to this URL (e.g., http://<ngrok-public-url>/docs)
+Open your browser and navigate to this URL (e.g., `http://<ngrok-public-url>/docs`)
 
 
 ### Docker Setup
-1- **Build the Docker Image**
+1. **Build the Docker Image**
 
 Navigate to your project directory in the terminal and build the Docker image with the following command:
 
@@ -84,14 +89,14 @@ Navigate to your project directory in the terminal and build the Docker image wi
 docker build -t image-verse-web-app .
  ```
 
- 2- **Run the Docker Container**
+2. **Run the Docker Container**
 Run the Docker container with your ngrok authentication token as an environment variable:
 
 ```
 docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 image-verse-web-app 
 ```
 
-3- **Access the API Documentation**
+3. **Access the API Documentation**
 
 - After starting the container, check the logs to find the public ngrok URL.
 - Open your browser and navigate to this URL (e.g., `http://<ngrok-public-url>`) 
@@ -127,8 +132,8 @@ docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 image-verse-web-app
   ],
   "format": "JPEG"
 }
+```
 
-  ```
 - **Response**:
  ```json
  {
@@ -136,10 +141,9 @@ docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 image-verse-web-app
   "image_data": "<base64_encoded_image>",
   "image_format": "JPEG"
 }
+```
 
-  ```
-
-### 2. **Fine-Tune Model**
+### 2. **Image Captioning**
 - **Endpoint**: `/caption`
 - **Method**: `POST`
 - **Request Body**:
@@ -152,7 +156,7 @@ docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 image-verse-web-app
   "image_data": "<base64_encoded_image_with_bounding_boxes>"
 }
 
-  ```
+```
 ---
 
 ## Directory Structure
