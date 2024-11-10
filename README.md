@@ -48,15 +48,16 @@
 
 3. **Install dependencies**: You can install dependencies with either `pip` or `poetry`:
    Using `pip`:
-   ```bash
+
+```bash
   pip install -r requirements.txt
-   ```
+```
 
 Using `poetry` (if Poetry is installed):
 
 ```bash
 poetry install
-   ```
+```
 
 5. **Set up environment variables**:
    - Create a `.env` file in the project root directory and add your Replicate API token:
