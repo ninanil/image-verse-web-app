@@ -89,7 +89,7 @@ Run the Docker container with your ngrok authentication token as an environment 
 
 ```
     docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 image-verse-web-app 
-     ```
+```
 
 3- **Access the API Documentation**
 
