@@ -93,8 +93,8 @@ docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 image-verse-web-app
 
 3- **Access the API Documentation**
 
-After starting the container, check the logs to find the public ngrok URL.
-Open your browser and navigate to this URL (e.g., http://<ngrok-public-url>/docs) to view the interactive Swagger UI for API documentation.
+- After starting the container, check the logs to find the public ngrok URL.
+- Open your browser and navigate to this URL (e.g., `http://<ngrok-public-url>`) 
 
 ---
 
