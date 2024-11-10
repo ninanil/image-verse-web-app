@@ -58,7 +58,45 @@
 
 ---
 
+## Running the Application
 
+### Non-Docker Setup
+1- **Start the FastAPI Server with ngrok**
+
+To start the server and create a public URL with ngrok, run the following command in your terminal:
+
+```
+python main.py 
+     ```
+
+2- **Access the API documentation**:
+
+After running the command, the application will display a public ngrok URL in the logs.
+Open your browser and navigate to this URL (e.g., http://<ngrok-public-url>/docs)
+
+
+### Docker Setup
+1- **Build the Docker Image**
+
+Navigate to your project directory in the terminal and build the Docker image with the following command:
+
+```
+  docker build -t image-verse-web-app .
+ 
+     ```
+ 2- **Run the Docker Container**
+Run the Docker container with your ngrok authentication token as an environment variable:
+
+```
+    docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 image-verse-web-app 
+     ```
+
+3- **Access the API Documentation**
+
+After starting the container, check the logs to find the public ngrok URL.
+Open your browser and navigate to this URL (e.g., http://<ngrok-public-url>/docs) to view the interactive Swagger UI for API documentation.
+
+---
 
 
 ## API Endpoints
