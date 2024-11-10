@@ -83,6 +83,7 @@ docker build -t image-verse-web-app .
 docker run -e NGROK_AUTH_TOKEN=your_token_here -p 8000:8000 your_image_name
 
 ---
+
 ## API Endpoints
 
 ### 1. **Generate Image**
