@@ -7,7 +7,6 @@
 ## Table of Contents
 
 - [Features](#features)
-- [Requirements](#requirements)
 - [Installation](#installation)
 - [Running the Application](#running-the-application)
 - [API Endpoints](#api-endpoints)
@@ -16,17 +15,6 @@
 ## Features
 - **Image Generation**: Generates high-quality, realistic images from text prompts using the Stable Diffusion model, CompVis/stable-diffusion-v1-4 
 - **Image Captioning**: Creates captions for images using Microsoft/Florence-2-large
-
----
-
-## Requirements
-
-- Python 3.9+
-- [Replicate API](https://replicate.com/) account and API key
-- `.env` file with the following content:
-  ```
-  REPLICATE_API_TOKEN=your_replicate_api_token
-  ```
 
 ---
 
